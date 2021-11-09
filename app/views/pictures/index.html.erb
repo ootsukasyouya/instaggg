@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pictures</h1>
+<h1>投稿一覧</h1>
 
 <table>
   <thead>
     <tr>
+      <th>ユーザー</th>
       <th>Title</th>
       <th colspan="3"></th>
     </tr>
@@ -15,7 +16,7 @@
       <tr>
         <td><%= picture.user.name %></td>
         <td><%= picture.title %></td>
-        <td><%= link_to '確認', picture %></td>
+        <td><%= link_to '詳細', picture %></td>
         <td><%= link_to '編集', edit_picture_path(picture) %></td>
         <td><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
