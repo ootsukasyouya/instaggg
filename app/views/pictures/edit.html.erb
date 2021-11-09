@@ -4,3 +4,4 @@
 
 <%= link_to 'Show', @picture %> |
 <%= link_to 'Back', pictures_path %>
+<%= link_to 'お気にいり',favorites_path(picture_id: @picture.id) %> 
