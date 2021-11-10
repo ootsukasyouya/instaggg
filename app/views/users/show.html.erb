@@ -1,9 +1,17 @@
 <h1><%= @user.name %>のページ</h1>
-<p>メールアドレス: <%= @user.email %></p>
-<% if @user.avatar? %>
-  <h1>アイコン</h1>
-  <%= image_tag @user.avatar.url %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md">
+      <p>メールアドレス: <%= @user.email %></p>
+    </div>
+    <div class="col-md">
+      <% if @user.avatar? %>
+        <h1>アイコン</h1>
+        <%= image_tag @user.avatar.url %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <br>
 <%= link_to "プロフィール画像の追加、名前とアドレスとパスワード変更", edit_user_path(current_user.id) %>
 <br>

@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<div class="alert alert-success"><h1>新しいアカウント</h1></div>
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
@@ -9,14 +9,16 @@
     </ul>
   </div>
 <% end %>
+<div class="container-fluid">
+  <div class="row">
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Create my account" %>
+  <div class="col"><%= f.label :name %>
+  <%= f.text_field :name %></div>
+  <div class="col"><%= f.label :email %>
+  <%= f.email_field :email %></div>
+  <div class="col"><%= f.label :password %>
+  <%= f.password_field :password %></div>
+  <div class="col"><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div>
+  <div class="col"><%= f.submit "Create my account" %></div>
 <% end %>
